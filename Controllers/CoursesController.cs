@@ -1,10 +1,12 @@
 ﻿using LearningManagementSystem.Dtos;
 using LearningManagementSystem.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LearningManagementSystem.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CoursesController : ControllerBase
@@ -22,6 +24,7 @@ namespace LearningManagementSystem.Controllers
             return Ok(await _courseService.GetAllCoursesAsync());
         }
 
+
         [HttpGet("CourseID{id}")]
         public async Task<IActionResult> GetCourse(int id)
         {
@@ -33,6 +36,7 @@ namespace LearningManagementSystem.Controllers
             return Ok(result);
         }
 
+
         [HttpGet("InstructorId{id}")]
         public async Task<IActionResult> GetCoursesByInstructorId(string id)
         {
@@ -41,7 +45,9 @@ namespace LearningManagementSystem.Controllers
             return Ok(result);
         }
 
+
         [HttpPost("CreateCourse")]
+        [Authorize(Roles = "Instructor,Admin")]
         public async Task<IActionResult> CreateAsync([FromBody]CreateCourseDto dto)
         {
             if(!ModelState.IsValid)
@@ -55,7 +61,9 @@ namespace LearningManagementSystem.Controllers
             return Ok(result);
         }
 
+
         [HttpPut("UpdateCourse{id}")]
+        [Authorize(Roles = "Instructor,Admin")]
         public async Task<IActionResult> UpdateAsync([FromBody] CreateCourseDto dto,int id)
         {
             if (!ModelState.IsValid)
@@ -69,7 +77,9 @@ namespace LearningManagementSystem.Controllers
             return Ok(result);
         }
 
+
         [HttpDelete("DeleteCourse{id}")]
+        [Authorize(Roles = "Instructor,Admin")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var result = await _courseService.DeleteCourseAsync(id);

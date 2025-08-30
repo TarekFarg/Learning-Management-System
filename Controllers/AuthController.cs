@@ -1,5 +1,6 @@
 ﻿using LearningManagementSystem.Dtos;
 using LearningManagementSystem.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,6 +48,7 @@ namespace LearningManagementSystem.Controllers
         }
 
         [HttpPost("AddRole")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddRoleAsync([FromBody] AddRoleDto dto)
         {
             if (!ModelState.IsValid)

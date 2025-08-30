@@ -1,4 +1,6 @@
-﻿namespace LearningManagementSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LearningManagementSystem.Models
 {
     public class Enrollment
     {
@@ -12,6 +14,7 @@
         public ApplicationUser Student { get; set; }
 
         public DateTime EnrollmentDate { get; set; }
+        [MaxLength(50)]
         public string Status { get; set; }
     }
 }

@@ -45,6 +45,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllers();
 
 builder.Services.AddTransient<IAuthService, AuthService>();
+builder.Services.AddTransient<ICourseService, CourseService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddSwaggerGen();

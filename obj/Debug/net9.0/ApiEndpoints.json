@@ -1,5 +1,90 @@
 [
   {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
+    "Method": "GetAssignmentAsync",
+    "RelativePath": "api/Assignments/assignment{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
+    "Method": "GetAssignmentsByCourseId",
+    "RelativePath": "api/Assignments/courseAssignments{courseId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
+    "Method": "CreateAssignmentAsync",
+    "RelativePath": "api/Assignments/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LearningManagementSystem.Dtos.CreateAssignmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
+    "Method": "DeleteAssignment",
+    "RelativePath": "api/Assignments/delete{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
+    "Method": "UpdateAssignmentAsync",
+    "RelativePath": "api/Assignments/update{assignmentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LearningManagementSystem.Dtos.CreateAssignmentDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "assignmentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LearningManagementSystem.Controllers.AuthController",
     "Method": "AddRoleAsync",
     "RelativePath": "api/Auth/AddRole",

@@ -85,6 +85,86 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
+    "Method": "DeleteAssignmentsubmissionAsycn",
+    "RelativePath": "api/AssignmentSubmissions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
+    "Method": "GetAssignmentsSubmissionByAssIdAsync",
+    "RelativePath": "api/AssignmentSubmissions/assignment{assId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
+    "Method": "CorrectAssignmentSubmissionAsync",
+    "RelativePath": "api/AssignmentSubmissions/correct",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LearningManagementSystem.Dtos.CorrectAssignmentSubmissionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
+    "Method": "CreateAssignmentSubmissionAsync",
+    "RelativePath": "api/AssignmentSubmissions/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LearningManagementSystem.Dtos.CreateAssignmentSubmissionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
+    "Method": "GetAssignmentSubmissionByIdAsync",
+    "RelativePath": "api/AssignmentSubmissions/submission{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LearningManagementSystem.Controllers.AuthController",
     "Method": "AddRoleAsync",
     "RelativePath": "api/Auth/AddRole",

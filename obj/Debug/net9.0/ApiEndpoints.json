@@ -166,22 +166,6 @@
   },
   {
     "ContainingType": "LearningManagementSystem.Controllers.AuthController",
-    "Method": "AddRoleAsync",
-    "RelativePath": "api/Auth/AddRole",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "LearningManagementSystem.Dtos.AddRoleDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "LearningManagementSystem.Controllers.AuthController",
     "Method": "LoginAsync",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
@@ -389,8 +373,24 @@
   },
   {
     "ContainingType": "LearningManagementSystem.Controllers.UsersController",
+    "Method": "AddRoleAsync",
+    "RelativePath": "api/Users/addRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LearningManagementSystem.Dtos.AddRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.UsersController",
     "Method": "DeleteUserAsync",
-    "RelativePath": "api/Users/delete{id}",
+    "RelativePath": "api/Users/delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -405,8 +405,45 @@
   },
   {
     "ContainingType": "LearningManagementSystem.Controllers.UsersController",
+    "Method": "GetUserRolesAsync",
+    "RelativePath": "api/Users/roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.UsersController",
+    "Method": "DeleteRoleAsync",
+    "RelativePath": "api/Users/roles/delete/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LearningManagementSystem.Controllers.UsersController",
     "Method": "UpdateUserByIdAsync",
-    "RelativePath": "api/Users/update{id}",
+    "RelativePath": "api/Users/update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -427,7 +464,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.UsersController",
     "Method": "GetUserByIdAsync",
-    "RelativePath": "api/Users/user{id}",
+    "RelativePath": "api/Users/user/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -23,25 +23,7 @@ namespace LearningManagementSystem.Services
             _roleManager = roleManager;
             _jwt = jwt.Value;
         }
-
-
-        public async Task<string> AddRoleAsync(AddRoleDto dto)
-        {
-            var user = await _userManager.FindByIdAsync(dto.UserId);
-
-            if (user == null)
-                return "User Id is incorrect!";
-
-            if (await _roleManager.FindByNameAsync(dto.Role) == null)
-                return "RoleName is in correct!";
-
-            if (await _userManager.IsInRoleAsync(user, dto.Role))
-                return "User already assigned to this role";
-
-            var result = await _userManager.AddToRoleAsync(user, dto.Role);
-
-            return result.Succeeded ? string.Empty : "Sonething went wrong";
-        }
+    
 
         public async Task<AuthDto> GetTokenAsync(GetTokenDto dto)
         {
@@ -104,7 +86,8 @@ namespace LearningManagementSystem.Services
                 Username = user.UserName,
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
                 ExpiresOn = token.ValidTo,
-                Roles = new List<string> { "User" }
+                Roles = new List<string> { "User" },
+                Message = "Rigerted successfully"
             };
         }
 

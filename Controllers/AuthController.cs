@@ -47,21 +47,5 @@ namespace LearningManagementSystem.Controllers
 
         }
 
-        [HttpPost("AddRole")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AddRoleAsync([FromBody] AddRoleDto dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var resutl = await _authService.AddRoleAsync(dto);
-
-            if (!string.IsNullOrEmpty(resutl))
-                return BadRequest(resutl);
-
-            return Ok(dto);
-
-        }
-
     }
 }

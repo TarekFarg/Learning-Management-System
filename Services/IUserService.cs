@@ -9,5 +9,12 @@ namespace LearningManagementSystem.Services
         Task<UserDto> UpdateUserAsync(RigesterDto dto, string userID);
 
         Task<UserDto> DeleteUserAsync(string id);
+
+
+        Task<String> AddRoleAsync(AddRoleDto dto);
+
+        Task<IEnumerable<string>> GetUserRolesAsync(string UserId);
+
+        Task<String> DeleteRoleAsync(string RoleName, string UserId);
     }
 }

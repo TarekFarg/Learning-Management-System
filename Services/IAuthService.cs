@@ -8,6 +8,6 @@ namespace LearningManagementSystem.Services
 
         Task<AuthDto> GetTokenAsync(GetTokenDto dto);
 
-        Task<String> AddRoleAsync(AddRoleDto dto);
+        
     }
 }

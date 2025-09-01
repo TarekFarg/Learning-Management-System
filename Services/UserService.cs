@@ -8,10 +8,11 @@ namespace LearningManagementSystem.Services
     public class UserService : IUserService
     {
         private readonly UserManager<ApplicationUser> _userManager;
-
-        public UserService(UserManager<ApplicationUser> userManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public UserService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public async Task<UserDto> GetUserByIdAsync(string id)
@@ -58,7 +59,7 @@ namespace LearningManagementSystem.Services
 
             return new UserDto 
             {
-                Status = "success",
+                Status = "Updated",
                 Succeeded = true,
                 Email = user.Email,
                 FirstName = user.FirstName,
@@ -88,7 +89,7 @@ namespace LearningManagementSystem.Services
 
             return new UserDto
             {
-                Status = "success",
+                Status = "Deleted",
                 Succeeded = true,
                 Email = user.Email,
                 FirstName = user.FirstName,
@@ -98,5 +99,58 @@ namespace LearningManagementSystem.Services
             };
         }
 
+
+        public async Task<string> AddRoleAsync(AddRoleDto dto)
+        {
+            var user = await _userManager.FindByIdAsync(dto.UserId);
+
+            if (user == null)
+                return "User Id is incorrect!";
+
+            if (await _roleManager.FindByNameAsync(dto.Role) == null)
+                return "RoleName is in correct!";
+
+            if (await _userManager.IsInRoleAsync(user, dto.Role))
+                return "User already assigned to this role";
+
+            var result = await _userManager.AddToRoleAsync(user, dto.Role);
+
+            return result.Succeeded ? string.Empty : "Sonething went wrong";
+        }
+
+        public async Task<IEnumerable<string>> GetUserRolesAsync(string UserId)
+        {
+            var user = await _userManager.FindByIdAsync(UserId);
+
+            if (user == null)
+                return new List<string>();
+            
+            return await _userManager.GetRolesAsync(user);
+        }
+
+        public async Task<string> DeleteRoleAsync(string RoleName, string UserId)
+        {
+            var user = await _userManager.FindByIdAsync(UserId);
+
+            if (user == null)
+                return $"userId: {UserId} not found!";
+
+            if(await _roleManager.FindByNameAsync(RoleName) == null)
+                return $"roleName: {RoleName} Not found!";
+
+            var result = await _userManager.RemoveFromRoleAsync(user, RoleName);
+
+
+            if (!result.Succeeded)
+            {
+                var errors = string.Empty;
+                foreach (var error in result.Errors)
+                    errors += $"{error}, ";
+
+                return errors;
+            }
+
+            return string.Empty;
+        }
     }
 }

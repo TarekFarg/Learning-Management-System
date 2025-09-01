@@ -52,6 +52,7 @@ builder.Services.AddTransient<ICourseService, CourseService>();
 builder.Services.AddTransient<IEnrollmentService, EnrollmentService>();
 builder.Services.AddTransient<IAssignmentService, AssignmentService>();
 builder.Services.AddTransient<IAssignmentSubmissionService, AssignmentSubmissionService>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddSwaggerGen(c =>

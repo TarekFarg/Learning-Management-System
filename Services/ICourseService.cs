@@ -10,11 +10,11 @@ namespace LearningManagementSystem.Services
 
         Task<CourseDto> DeleteCourseAsync(int id);
 
-        Task<IEnumerable<Course>> GetAllCoursesAsync();
+        Task<IEnumerable<CourseDto>> GetAllCoursesAsync();
 
-        Task<Course> GetCourseByIdAsync(int id);
+        Task<CourseDto> GetCourseByIdAsync(int id);
 
-        Task<IEnumerable<Course>> GetCoursesByInstructorIdAsync(string id);
+        Task<IEnumerable<CourseDto>> GetCoursesByInstructorIdAsync(string id);
 
     }
 }

@@ -30,8 +30,8 @@ namespace LearningManagementSystem.Controllers
         {
             var result = await _courseService.GetCourseByIdAsync(id);
 
-            if(result == null) 
-                return NotFound($"id: {id} NotFound!");
+            if(!result.Succeeded) 
+                return BadRequest(result.Message);
 
             return Ok(result);
         }
@@ -40,8 +40,14 @@ namespace LearningManagementSystem.Controllers
         [HttpGet("InstructorId{id}")]
         public async Task<IActionResult> GetCoursesByInstructorId(string id)
         {
-            // need to check if this id is constructor or not (use user service)
             var result = await _courseService.GetCoursesByInstructorIdAsync(id);
+            
+            if(result == null || !result.Any())
+                return BadRequest();
+
+            if (!result.ElementAt(0).Succeeded)
+                return BadRequest(result.ElementAt(0).Message);
+
             return Ok(result);
         }
 

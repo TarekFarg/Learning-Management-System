@@ -41,7 +41,8 @@ namespace LearningManagementSystem.Services
                 Describtion = course.Describtion,
                 Titel = course.Titel,
                 InstructorId = course.InstructorId,
-                Message = "Done"
+                Message = "Done",
+                Id = course.Id
             };
         }
 
@@ -69,7 +70,8 @@ namespace LearningManagementSystem.Services
                 Message = "Updated",
                 InstructorId = course.InstructorId,
                 Describtion = course.Describtion,
-                Titel= course.Titel
+                Titel= course.Titel,
+                Id = course.Id
             };
         }
 
@@ -89,28 +91,72 @@ namespace LearningManagementSystem.Services
                 Message = "Deleted",
                 InstructorId = course.InstructorId,
                 Describtion= course.Describtion,
-                Titel = course.Titel
+                Titel = course.Titel,
+                Id = course.Id
             };
         }
 
-        public async Task<IEnumerable<Course>> GetAllCoursesAsync()
+        public async Task<IEnumerable<CourseDto>> GetAllCoursesAsync()
         {
-            return await _context.Courses
-                .Include(c => c.Instructor)
-                .ToListAsync();
+            var list = await _context.Courses.ToListAsync();
+
+            var result = new List<CourseDto>();
+            foreach (var course in list)
+            {
+                result.Add(new CourseDto
+                {
+                    Succeeded = true,
+                    Describtion = course.Describtion,
+                    Titel = course.Titel,
+                    InstructorId = course.InstructorId,
+                    Message = "Done",
+                    Id = course.Id
+                });
+            }
+            return result;
         }
 
-        public async Task<Course> GetCourseByIdAsync(int id)
+        public async Task<CourseDto> GetCourseByIdAsync(int id)
         {
-            return await _context.Courses.FindAsync(id);
+            var course = await _context.Courses.FindAsync(id);
+
+            if (course == null)
+                return new CourseDto { Message = $"courseId: {id} not found!" };
+
+            return new CourseDto
+            {
+                Succeeded = true,
+                Describtion = course.Describtion,
+                Titel = course.Titel,
+                InstructorId = course.InstructorId,
+                Message = "Done",
+                Id = course.Id
+            };
         }
 
-        public async Task<IEnumerable<Course>> GetCoursesByInstructorIdAsync(string id)
+        public async Task<IEnumerable<CourseDto>> GetCoursesByInstructorIdAsync(string id)
         {
-            if(await _userManager.FindByIdAsync(id)== null)
-                return Enumerable.Empty<Course>();
+            if (await _userManager.FindByIdAsync(id) == null)
+                return new List<CourseDto> { new CourseDto { Message = $"InstructorId: {id} not found!" } };
 
-            return await _context.Courses.Where(c => c.InstructorId == id).ToListAsync();
+            var list = await _context.Courses.Where(c => c.InstructorId == id).ToListAsync();
+
+            var result = new List<CourseDto>();
+
+            foreach (var course in list)
+            {
+                result.Add(new CourseDto
+                {
+                    Succeeded = true,
+                    Describtion = course.Describtion,
+                    Titel = course.Titel,
+                    InstructorId = course.InstructorId,
+                    Message = "Done",
+                    Id = course.Id
+                });
+            }
+
+            return result;
         }
     }
 }

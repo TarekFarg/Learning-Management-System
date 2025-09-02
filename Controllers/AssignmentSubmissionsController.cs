@@ -18,7 +18,8 @@ namespace LearningManagementSystem.Controllers
             _assignmentSubmissionService = assignmentSubmissionService;
         }
 
-        [HttpGet("submission{id}")]
+        [HttpGet("submission/{id}")]
+        [Authorize(Roles = "Admin,Instructor")]
         public async Task<IActionResult> GetAssignmentSubmissionByIdAsync(int id)
         {
             var result = await _assignmentSubmissionService.GetAssignmentSubmissionByIDAsync(id);
@@ -29,7 +30,8 @@ namespace LearningManagementSystem.Controllers
             return Ok(result);
         }
 
-        [HttpGet("assignment{assId}")]
+        [HttpGet("assignment/{assId}")]
+        [Authorize(Roles = "Admin,Instructor")]
         public async Task<IActionResult> GetAssignmentsSubmissionByAssIdAsync(int assId)
         {
             var result = await _assignmentSubmissionService.GetAssignmentSubmissionsByAssIdAsync(assId);
@@ -44,6 +46,7 @@ namespace LearningManagementSystem.Controllers
         }
 
         [HttpPost("create")]
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> CreateAssignmentSubmissionAsync
             ([FromBody] CreateAssignmentSubmissionDto dto)
         {
@@ -59,6 +62,7 @@ namespace LearningManagementSystem.Controllers
         }
 
         [HttpPut("correct")]
+        [Authorize(Roles = "Instructor")]
         public async Task<IActionResult> CorrectAssignmentSubmissionAsync
             ([FromBody] CorrectAssignmentSubmissionDto dto)
         {
@@ -74,6 +78,7 @@ namespace LearningManagementSystem.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAssignmentsubmissionAsycn(int id)
         {
             var result = await _assignmentSubmissionService.DeleteAssignmentSubmissionAsync(id);

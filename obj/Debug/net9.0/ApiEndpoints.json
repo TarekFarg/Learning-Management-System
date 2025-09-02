@@ -2,7 +2,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
     "Method": "GetAssignmentAsync",
-    "RelativePath": "api/Assignments/assignment{id}",
+    "RelativePath": "api/Assignments/assignment/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
     "Method": "GetAssignmentsByCourseId",
-    "RelativePath": "api/Assignments/courseAssignments{courseId}",
+    "RelativePath": "api/Assignments/courseAssignments/{courseId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -50,7 +50,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
     "Method": "DeleteAssignment",
-    "RelativePath": "api/Assignments/delete{id}",
+    "RelativePath": "api/Assignments/delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -66,7 +66,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.AssignmentsController",
     "Method": "UpdateAssignmentAsync",
-    "RelativePath": "api/Assignments/update{assignmentId}",
+    "RelativePath": "api/Assignments/update/{assignmentId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -103,7 +103,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
     "Method": "GetAssignmentsSubmissionByAssIdAsync",
-    "RelativePath": "api/AssignmentSubmissions/assignment{assId}",
+    "RelativePath": "api/AssignmentSubmissions/assignment/{assId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -151,7 +151,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.AssignmentSubmissionsController",
     "Method": "GetAssignmentSubmissionByIdAsync",
-    "RelativePath": "api/AssignmentSubmissions/submission{id}",
+    "RelativePath": "api/AssignmentSubmissions/submission/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -209,7 +209,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.CoursesController",
     "Method": "GetCourse",
-    "RelativePath": "api/Courses/CourseID{id}",
+    "RelativePath": "api/Courses/CourseID/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -241,7 +241,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.CoursesController",
     "Method": "DeleteAsync",
-    "RelativePath": "api/Courses/DeleteCourse{id}",
+    "RelativePath": "api/Courses/DeleteCourse/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -257,7 +257,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.CoursesController",
     "Method": "GetCoursesByInstructorId",
-    "RelativePath": "api/Courses/InstructorId{id}",
+    "RelativePath": "api/Courses/InstructorId/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -273,7 +273,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.CoursesController",
     "Method": "UpdateAsync",
-    "RelativePath": "api/Courses/UpdateCourse{id}",
+    "RelativePath": "api/Courses/UpdateCourse/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -310,7 +310,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.EnrollmentsController",
     "Method": "GetCourseEnrollments",
-    "RelativePath": "api/Enrollments/courseEnrollments{courseId}",
+    "RelativePath": "api/Enrollments/courseEnrollments/{courseId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -342,7 +342,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.EnrollmentsController",
     "Method": "GetEnrollmentById",
-    "RelativePath": "api/Enrollments/enrollment{id}",
+    "RelativePath": "api/Enrollments/enrollment/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -358,7 +358,7 @@
   {
     "ContainingType": "LearningManagementSystem.Controllers.EnrollmentsController",
     "Method": "GetStudentEnrollments",
-    "RelativePath": "api/Enrollments/studentEnrollments{StudentId}",
+    "RelativePath": "api/Enrollments/studentEnrollments/{StudentId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

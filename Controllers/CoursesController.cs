@@ -25,7 +25,7 @@ namespace LearningManagementSystem.Controllers
         }
 
 
-        [HttpGet("CourseID{id}")]
+        [HttpGet("CourseID/{id}")]
         public async Task<IActionResult> GetCourse(int id)
         {
             var result = await _courseService.GetCourseByIdAsync(id);
@@ -37,7 +37,7 @@ namespace LearningManagementSystem.Controllers
         }
 
 
-        [HttpGet("InstructorId{id}")]
+        [HttpGet("InstructorId/{id}")]
         public async Task<IActionResult> GetCoursesByInstructorId(string id)
         {
             var result = await _courseService.GetCoursesByInstructorIdAsync(id);
@@ -68,7 +68,7 @@ namespace LearningManagementSystem.Controllers
         }
 
 
-        [HttpPut("UpdateCourse{id}")]
+        [HttpPut("UpdateCourse/{id}")]
         [Authorize(Roles = "Instructor,Admin")]
         public async Task<IActionResult> UpdateAsync([FromBody] CreateCourseDto dto,int id)
         {
@@ -84,7 +84,7 @@ namespace LearningManagementSystem.Controllers
         }
 
 
-        [HttpDelete("DeleteCourse{id}")]
+        [HttpDelete("DeleteCourse/{id}")]
         [Authorize(Roles = "Instructor,Admin")]
         public async Task<IActionResult> DeleteAsync(int id)
         {

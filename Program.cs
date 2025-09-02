@@ -57,7 +57,7 @@ builder.Services.AddTransient<IUserService, UserService>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "MyAPI", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "LearningManagementSystemApi", Version = "v1" });
 
     // Add JWT authentication in Swagger UI
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

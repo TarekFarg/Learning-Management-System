@@ -1,11 +1,11 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "MyAPI",
+    "title": "LearningManagementSystemApi",
     "version": "v1"
   },
   "paths": {
-    "/api/Assignments/assignment{id}": {
+    "/api/Assignments/assignment/{id}": {
       "get": {
         "tags": [
           "Assignments"
@@ -28,7 +28,7 @@
         }
       }
     },
-    "/api/Assignments/courseAssignments{courseId}": {
+    "/api/Assignments/courseAssignments/{courseId}": {
       "get": {
         "tags": [
           "Assignments"
@@ -82,7 +82,7 @@
         }
       }
     },
-    "/api/Assignments/update{assignmentId}": {
+    "/api/Assignments/update/{assignmentId}": {
       "put": {
         "tags": [
           "Assignments"
@@ -124,7 +124,7 @@
         }
       }
     },
-    "/api/Assignments/delete{id}": {
+    "/api/Assignments/delete/{id}": {
       "delete": {
         "tags": [
           "Assignments"
@@ -147,7 +147,7 @@
         }
       }
     },
-    "/api/AssignmentSubmissions/submission{id}": {
+    "/api/AssignmentSubmissions/submission/{id}": {
       "get": {
         "tags": [
           "AssignmentSubmissions"
@@ -170,7 +170,7 @@
         }
       }
     },
-    "/api/AssignmentSubmissions/assignment{assId}": {
+    "/api/AssignmentSubmissions/assignment/{assId}": {
       "get": {
         "tags": [
           "AssignmentSubmissions"
@@ -352,7 +352,7 @@
         }
       }
     },
-    "/api/Courses/CourseID{id}": {
+    "/api/Courses/CourseID/{id}": {
       "get": {
         "tags": [
           "Courses"
@@ -375,7 +375,7 @@
         }
       }
     },
-    "/api/Courses/InstructorId{id}": {
+    "/api/Courses/InstructorId/{id}": {
       "get": {
         "tags": [
           "Courses"
@@ -428,7 +428,7 @@
         }
       }
     },
-    "/api/Courses/UpdateCourse{id}": {
+    "/api/Courses/UpdateCourse/{id}": {
       "put": {
         "tags": [
           "Courses"
@@ -470,7 +470,7 @@
         }
       }
     },
-    "/api/Courses/DeleteCourse{id}": {
+    "/api/Courses/DeleteCourse/{id}": {
       "delete": {
         "tags": [
           "Courses"
@@ -493,7 +493,7 @@
         }
       }
     },
-    "/api/Enrollments/courseEnrollments{courseId}": {
+    "/api/Enrollments/courseEnrollments/{courseId}": {
       "get": {
         "tags": [
           "Enrollments"
@@ -516,7 +516,7 @@
         }
       }
     },
-    "/api/Enrollments/studentEnrollments{StudentId}": {
+    "/api/Enrollments/studentEnrollments/{StudentId}": {
       "get": {
         "tags": [
           "Enrollments"
@@ -538,7 +538,7 @@
         }
       }
     },
-    "/api/Enrollments/enrollment{id}": {
+    "/api/Enrollments/enrollment/{id}": {
       "get": {
         "tags": [
           "Enrollments"

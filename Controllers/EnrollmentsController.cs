@@ -18,7 +18,8 @@ namespace LearningManagementSystem.Controllers
             _enrollmentService = enrollmentService;
         }
 
-        [HttpGet("courseEnrollments{courseId}")]
+        [HttpGet("courseEnrollments/{courseId}")]
+        [Authorize(Roles = "Admin,Instructor")]
         public async Task<IActionResult> GetCourseEnrollments(int courseId)
         {
             var result = await _enrollmentService.GetCourseEnrollmentsAsync(courseId);
@@ -33,7 +34,8 @@ namespace LearningManagementSystem.Controllers
         }
 
 
-        [HttpGet("studentEnrollments{StudentId}")]
+        [HttpGet("studentEnrollments/{StudentId}")]
+        [Authorize(Roles = "Admin,Instructor")]
         public async Task<IActionResult> GetStudentEnrollments(string StudentId)
         {
             var result = await _enrollmentService.GetStudentEnrollmentsAsync(StudentId);
@@ -48,7 +50,8 @@ namespace LearningManagementSystem.Controllers
         }
 
 
-        [HttpGet("enrollment{id}")]
+        [HttpGet("enrollment/{id}")]
+        [Authorize(Roles = "Admin,Instructor")]
         public async Task<IActionResult> GetEnrollmentById(int id)
         {
             var result = await _enrollmentService.GetEnrollmentByIdAsync(id);
@@ -61,6 +64,7 @@ namespace LearningManagementSystem.Controllers
 
 
         [HttpPost("Enroll")]
+        [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> EnrollAsync([FromBody] CreateEnrollmentDto dto)
         {
             if (!ModelState.IsValid)
@@ -76,6 +80,7 @@ namespace LearningManagementSystem.Controllers
 
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAsync(int id )
         {
             var result = await _enrollmentService.DeleteEnrollmentAsync(id);
@@ -85,9 +90,5 @@ namespace LearningManagementSystem.Controllers
 
             return Ok(result);
         }
-
-
-
-
     }
 }

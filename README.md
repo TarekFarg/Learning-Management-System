@@ -18,7 +18,7 @@ This project provides APIs for managing users, courses, assignments, enrollments
 ---
 
 ## 🛠️ Tech Stack
-- **ASP.NET Core 8.0**  
+- **ASP.NET Core 9.0**  
 - **Entity Framework Core** (Code First + Migrations)  
 - **Identity** for user & role management  
 - **JWT Authentication**  

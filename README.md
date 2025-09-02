@@ -1,4 +1,3 @@
-```
 # 📚 Learning Management System (LMS) API
 
 
@@ -76,7 +75,7 @@ LearningManagementSystem/
 ├── appsettings.json
 └── README.md
 
-````
+```
 
 ---
 
@@ -143,7 +142,8 @@ LearningManagementSystem/
    ```bash
    git clone https://github.com/TarekFarg/Learning-Management-System.git
    cd Learning-Management-System
-````
+   ```
+
 
 2. **Update Database**
 
@@ -216,8 +216,4 @@ POST /api/Auth/Login
 **Tarek Mohamed**
 [GitHub](https://github.com/TarekFarg) | [LinkedIn](https://www.linkedin.com/in/tarek-mohamed-325373267/)
 
-```
 
----
-
-```

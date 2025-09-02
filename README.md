@@ -1,8 +1,6 @@
-
----
-
-```markdown
+```
 # 📚 Learning Management System (LMS) API
+
 
 A **Learning Management System (LMS)** built with **ASP.NET Core Web API**.  
 This project provides APIs for managing users, courses, assignments, enrollments, and authentication with role-based authorization.
@@ -31,6 +29,7 @@ This project provides APIs for managing users, courses, assignments, enrollments
 ---
 
 ## 📂 Project Structure
+
 ```
 
 LearningManagementSystem/
